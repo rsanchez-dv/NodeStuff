@@ -3,13 +3,30 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static "css/test.css"%}">
+    <title>Django Level truncatewords</title>
+    <link rel="stylesheet" href="{% static "css/test.css"%}"
 </head>
 <body>
-    <h1>This is not my future</h1>
-    <img src="{% static "images/java.jpg"%}" alt="hotdog image">
+    <h1>Welcome to level two</h1>
+    <Here are your access records:>
+    <div class="djangtwo">
+        {% if access_records %}
+        <table>
+        <thead>
+            <th>Site name</th>
+            <th>Date Accesed</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+        {% endif %}
+    </div>
     
 </body>
 </html>
