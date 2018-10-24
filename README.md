@@ -12,5 +12,5 @@ These are the following projects that I have played around with or currently wor
   - A simple front-end website made in Angular 7. It covers the basics like components, making an API call to display data on the screen, and routing to different pages.
 - Landing Page (**Complete**)
   - A landing page using [Sal.js](https://github.com/mciastek/sal) to display a full screen landing page.
-- React Web page (**In Progress**)
+- React Web page (**Complete**)
   - Creates a simple react project in which an API is called and displays information dynamically on the page.
