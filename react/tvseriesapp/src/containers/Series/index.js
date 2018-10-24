@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SeriesList from '../../components/SeriesList'
 import Loader from '../../components/Loader'
+import Intro from '../../components/Intro'
 
 class Series extends Component {
     // Storing data on this component
@@ -28,10 +29,7 @@ class Series extends Component {
         const { series, seriesName, isFetching} = this.state;
         return (
             <div> 
-                {/*Prints out the length of the array in the state
-                The length of series array - {this.state.series.length}
-                */}
-                
+                <Intro message="Here you can find all of your most loved series" />
                 <div>
                     <input value={seriesName} type="text" onChange={this.onSeriesInputChange}/>
                 </div>
