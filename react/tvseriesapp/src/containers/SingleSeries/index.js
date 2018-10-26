@@ -29,7 +29,7 @@ class SingleSeries extends Component {
                         <p>Rating - {show.rating.average}</p>
                         <p>Episodes - {show._embedded.episodes.length}</p>
                         <p>
-                            <img alt="Picture of Movie" src={show.image.medium}/>
+                            <img src={show.image.medium} alt="show case"/>
                         </p>
                     </div>
                 }

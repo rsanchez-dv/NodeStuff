@@ -1,4 +1,8 @@
-# Angy7
+# UserProfileLoader
+
+> A simple Angular App where users are displayed from calling an API on the homepage, basic routing implemented, and basic form function.
+
+![Image of homepage](https://i.imgur.com/BueGk15.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
