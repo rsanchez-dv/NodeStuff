@@ -32,7 +32,7 @@ var addNote = (title, body) =>{
 }
 
 var getAll = () => {
-    console.log('Getting All notes')
+    return fetchNotes()
 }
 var remove = (title) => {
     var notes = fetchNotes()
@@ -46,14 +46,15 @@ var read = (title) => {
     var filteredNotes = notes.filter((note) => note.title === title)
     return filteredNotes[0]
 }
-var logNote = (Note) => {
+var logNote = (note) => {
     console.log('---')
-    console.log(`Title" ${note.title}`)
-    console.log(`Body" ${note.body}`)
+    console.log(`Title: ${note.title}`)
+    console.log(`Body: ${note.body}`)
 }
 module.exports = {
     addNote,
     getAll,
     remove,
-    read
+    read,
+    logNote
 }
