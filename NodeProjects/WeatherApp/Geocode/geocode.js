@@ -2,7 +2,7 @@ const request = require('request')
 var GEOCODE_API_KEY = process.env.GEOCODE_API_KEY
 
 var geocodeAddress = (address,callback) => {
-    var encodedAddress = encodeURIComponent(address)
+    var encodedAddress = encodeURIComponent(address);
     request({
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${GEOCODE_API_KEY}`,
         json: true
