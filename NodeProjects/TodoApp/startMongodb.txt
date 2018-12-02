@@ -1,5 +1,5 @@
 Linux Dev Env
-mongod --dbpath ./monog-data
+mongod --dbpath /home/zyxel/mongo-data/
 
 Windows Dev Env
 /"Program Files"/MongoDb/Server/4.0/bin/mongod.exe -dbpath /Users/rsanc/mongo-data/
