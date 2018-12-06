@@ -1,5 +1,6 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const _ = require('lodash');
+const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose');
@@ -59,6 +60,30 @@ app.delete('/todos/:id',(req,res)=>{
         res.status(400).send();
     });
 });
+
+app.patch('/todo/:id',(req,res)=>{
+    var id = req.params.id;
+    // Want to only update from text and completed
+    var body = _.pick(req.body,['text','completed']);
+    if(!ObjectID.isValid(id)){
+        return res.status(404).send();
+    }
+    if(_.isBoolean(body.completed)&& body.completed){
+        body.completedAt = new Date().getTime();
+    }else{
+        body.completed = false;
+        body.completedAt = null;
+    }
+    Todo.findByIdAndUpdate(id,{$set: body},{new: true}).then((todo)=>{
+        if(!todo){
+            return res.status(404).send();
+        }
+        res.send({todo});
+    }).catch((e)=>{
+        res.status(400).send();
+    })
+
+})
 
 app.listen(port,()=>{
     console.log(`Started server on port: ${port}`)
