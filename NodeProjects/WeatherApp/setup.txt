@@ -1,0 +1,15 @@
+To set up the enviromental keys for this project create a file called 'app-env' and
+include the following:
+
+# run source app-env to load this
+export GEOCODE_API_KEY="VALUE"
+export WEATHER_API_KEY="VALUE"
+
+Replace the VALUE with the actual keys from the API.
+
+Run the file by using:
+ Linux: source app-env
+
+
+ https://scotch.io/tutorials/how-to-use-environment-variables
+ https://hackernoon.com/how-to-use-environment-variables-keep-your-secret-keys-safe-secure-8b1a7877d69c
