@@ -18,7 +18,7 @@
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongodb": "^2.2.36",
-    "mongoose": "^5.3.14",
+    "mongoose": "^5.4.8",
     "validator": "^10.9.0"
   },
   "devDependencies": {

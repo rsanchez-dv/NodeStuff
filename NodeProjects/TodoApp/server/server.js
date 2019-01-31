@@ -15,6 +15,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+// Registers users to the database
 app.post('/users', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
@@ -26,10 +27,22 @@ app.post('/users', (req, res) => {
       res.status(400).send(e);
     })
   });
-  
-  app.get('/users/me', authenticate,(req,res)=>{
-    res.send(req.user);
-  });
+// Checks if token works
+app.get('/users/me', authenticate,(req,res)=>{
+  res.send(req.user);
+});
+
+// Logins users with username and password
+app.post('/users/login',(req,res)=>{
+    var body = _.pick(req.body,['email','password']);
+    User.findByCredentials(body.email,body.password).then((user)=>{
+        user.generateAuthToken().then((token)=>{
+            res.header('x-auth',token).send(user);
+        });
+    }).catch((e)=>{
+        res.status(400).send();
+    })
+});
 
 app.post('/todos',(req,res)=>{
     var todo = new Todo({
