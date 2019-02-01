@@ -20,19 +20,8 @@ const users = [
         _id: userTwoId,
         email: 'lkjhd@live.com',
         password: 'userpassword123'
-    },{
-        _id: userThreeId,
-        email: 'vrwervs@live.com',
-        password: 'adfsdfewaf',
-        tokens: [{
-            access: 'auth',
-            token: jwt.sign({_id: userThreeId,access:'auth'},'asdf').toString()
-            }]
     }
 ];
-
-
-
 
 const todos = [{
     _id: new ObjectID(),
@@ -54,9 +43,8 @@ const populateUsers = (done)=>{
     User.remove({}).then(()=>{
         var userOne = new User(users[0]).save();
         var userTwo = new User(users[1]).save();
-        var userThree = new User(users[2]).save();
 
-        return Promise.all([userOne,userTwo,userThree])
+        return Promise.all([userOne,userTwo])
     }).then(()=>{
         done();
     })
