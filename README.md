@@ -14,3 +14,5 @@ These are the following projects that I have played around with or currently wor
   - A landing page using [Sal.js](https://github.com/mciastek/sal) to display a full screen landing page.
 - React Web page (**Complete**)
   - Creates a simple react project in which an API is called and displays information dynamically on the page.
+- Node Projects (**Complete**)
+  - A collection of node applications.
